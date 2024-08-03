@@ -1,8 +1,15 @@
 
 const addButton = document.querySelector("#addButton");
 const allBooks = document.querySelector("#allBooks");
+const dialog = document.querySelector("#inputBox");
 
-let myLibrary = [];
+let myLibrary = [{
+    title: "bookTitle",
+    author:"authorName",
+    pages:"69420",
+    read:"readOrNot"
+
+}];
 
 function Book(title,author,pages,read){   //,author,pages,read
 
@@ -17,13 +24,14 @@ function Book(title,author,pages,read){   //,author,pages,read
 
 
 function addBookToLibrary(){
-    let name1 = prompt("Enter the book name: ")
-    let author1 = prompt("Enter the author name: ")
-    let pages1 = prompt("Enter the number of pages: ")
-    let read1 = prompt("Did you read the book?")
+    // let name1 = prompt("Enter the book name: ")
+    // let author1 = prompt("Enter the author name: ")
+    // let pages1 = prompt("Enter the number of pages: ")
+    // let read1 = prompt("Did you read the book?")
 
-    myLibrary.push(new Book(name1,author1,pages1,read1));  
-
+    // myLibrary.push(new Book(name1,author1,pages1,read1));  
+    
+    dialog.showModal()
     renderBooks()
 
     
@@ -40,20 +48,20 @@ function renderBooks(){
 
 
         let renderedTitle = document.createElement("p")
-        renderedTitle.className = "title"
+        renderedTitle.classList.add("title","info")
         renderedTitle.textContent= `${myLibrary[i].title}`
 
         let renderedAuthor = document.createElement("p")
-        renderedAuthor.className = "author"
-        renderedAuthor.textContent= `${myLibrary[i].author}`
+        renderedAuthor.classList.add("author","info")
+        renderedAuthor.textContent= `Author : ${myLibrary[i].author}`
 
         let renderedPages = document.createElement("p")
-        renderedPages.className = "pages"
-        renderedPages.textContent = `${myLibrary[i].pages}`
+        renderedPages.classList.add("pages","info")
+        renderedPages.textContent = `Pages : ${myLibrary[i].pages}`
 
         let renderedRead = document.createElement("p")
-        renderedRead.className = "readStatus"
-        renderedRead.textContent = `${myLibrary[i].read}`
+        renderedRead.classList.add("readStatus","info")
+        renderedRead.textContent = `Read : ${myLibrary[i].read}`
 
 
 
@@ -73,6 +81,8 @@ function renderBooks(){
 
     }
 }
+
+renderBooks()
 
 addButton.addEventListener('click',()=>{
     addBookToLibrary()

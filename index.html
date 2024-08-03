@@ -9,11 +9,31 @@
 </head>
 <body>
 
-    <button id="addButton" class="addButton">Add Book!</button>
+    <dialog id="inputBox" class="inputBox">
+        <form class="inputForm">
+            <label for="titleBox">Book Name: </label>
+            <input type="text" class="titleBox" id="titleBox">
+            
+            <label for="authorBox">Author name: </label>
+            <input type="text" class="authorBox" id="authorBox">
+
+            <label for="pagesBox">Pages: </label>
+            <input type="number" class="pagesBox" id="pagesBox">
+
+            <label for="readBoxYes readBoxNo">Did you complete the book?</label>
+
+            <button type="submit">Add Book!</button>
+
+        </form>
+    </dialog>
+    
 
     <div class="allBooks" id="allBooks">
-        
+
     </div>
-    
+
+    <button id="addButton" class="addButton">Add Book!</button>
+
+
 </body>
 </html>
