@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
-    <title>Document</title>
+    <title>Library</title>
 </head>
 <body>
+    <div class="heading" id="heading">
+    <h1 class="pageHeading" id="pageHeading">Library</h1>
+    </div>
 
     <dialog id="inputBox" class="inputBox">
         <form class="inputForm">
@@ -20,7 +23,10 @@
             <label for="pagesBox">Pages: </label>
             <input type="number" class="pagesBox" id="pagesBox">
 
-            <label for="readBoxYes readBoxNo">Did you complete the book?</label>
+            <div class="readDiv" id="readDiv">
+            <label for="readStatus" class="readQ">Did you complete the book?</label>
+            <input type="checkbox" id="readStatus" class="readStatus">
+            </div>
 
             <button type="submit" id="submitForm" class="submitForm">Add Book!</button>
             <button class="cancel" id="cancel">Cancel</button>

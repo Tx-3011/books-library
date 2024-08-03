@@ -51,6 +51,8 @@ body{
     background-color: var(--cardBackground);
     width: 18rem;
     height: 20rem;
+
+    box-shadow: 4px 4px 10px var(--cardInfo);
 }
 
 
@@ -99,4 +101,22 @@ body{
 
 .inputBox::backdrop{
     backdrop-filter: blur(100px);
+}
+
+.inputBox{
+    box-shadow: 3px 3px 100px #c887f6;
+}
+
+.readQ{
+    font-size: 1rem;
+}
+
+.readStatus{
+    width:1rem;
+    height: 1rem;
+    justify-self: center;
+    align-self: center;
+
+    position: relative;
+    top: 2px;
 }

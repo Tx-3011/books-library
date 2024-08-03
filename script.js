@@ -78,9 +78,9 @@ function renderBooks(){
         renderedPages.classList.add("pages","info")
         renderedPages.textContent = `Pages : ${myLibrary[i].pages}`
 
-        let renderedRead = document.createElement("p")
-        renderedRead.classList.add("readStatus","info")
-        renderedRead.textContent = `Read : ${myLibrary[i].read}`
+        // let renderedRead = document.createElement("p")
+        // renderedRead.classList.add("readStatus","info")
+        // renderedRead.textContent = `Read : ${myLibrary[i].read}`
 
 
 
@@ -92,7 +92,7 @@ function renderBooks(){
         renderedDiv.appendChild(renderedTitle);
         renderedDiv.appendChild(renderedAuthor);
         renderedDiv.appendChild(renderedPages);
-        renderedDiv.appendChild(renderedRead);
+        // renderedDiv.appendChild(renderedRead);
 
         allBooks.appendChild(renderedDiv);
 
@@ -111,4 +111,6 @@ addButton.addEventListener('click',()=>{
 cancel.addEventListener('click',()=>{
     dialog.close()
 })
+
+
 
