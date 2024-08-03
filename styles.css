@@ -6,10 +6,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root{
-    --backgroundColor:#F4A261;
-    --cardTitle: #264653;
-    --cardBackground:#E9C46A;
-    --cardInfo:black;
+    --backgroundColor:#FDE2FF;
+    --cardTitle: black;
+    --cardBackground:#D7BCE8;
+    --cardInfo:rgb(37, 36, 36);
 
     --titleSize:3rem;
 
@@ -22,6 +22,8 @@ body{
     align-items: center;
     height: 100vh;
     background-color: var(--backgroundColor);
+
+    font-family: 'Inter',Arial, Helvetica, sans-serif;
 }
 
 .title{
@@ -39,6 +41,7 @@ body{
 
 .allBooks{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .bookCard{
@@ -94,4 +97,6 @@ body{
     border-radius: 10px;
 }
 
-
+.inputBox::backdrop{
+    backdrop-filter: blur(100px);
+}

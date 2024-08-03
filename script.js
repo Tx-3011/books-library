@@ -2,6 +2,11 @@
 const addButton = document.querySelector("#addButton");
 const allBooks = document.querySelector("#allBooks");
 const dialog = document.querySelector("#inputBox");
+const submitForm = document.querySelector("#submitForm");
+const titleBox = document.querySelector("#titleBox");
+const pagesBox = document.querySelector("#pagesBox");
+const authorBox = document.querySelector("#authorBox");
+const cancel = document.querySelector("#cancel");
 
 let myLibrary = [{
     title: "bookTitle",
@@ -32,11 +37,25 @@ function addBookToLibrary(){
     // myLibrary.push(new Book(name1,author1,pages1,read1));  
     
     dialog.showModal()
-    renderBooks()
-
-    
+    renderBooks()    
     
 }
+
+submitForm.addEventListener('click',()=>{
+
+    event.preventDefault()
+
+    let name1 = titleBox.value
+    let author1 = authorBox.value
+    let pages1 = pagesBox.value
+
+    myLibrary.push(new Book(name1,author1,pages1));
+
+    renderBooks()
+
+    dialog.close()    
+
+})
 
 function renderBooks(){
     allBooks.textContent = ``
@@ -89,4 +108,7 @@ addButton.addEventListener('click',()=>{
 })
 
 
+cancel.addEventListener('click',()=>{
+    dialog.close()
+})
 
