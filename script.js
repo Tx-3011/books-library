@@ -7,12 +7,13 @@ const titleBox = document.querySelector("#titleBox");
 const pagesBox = document.querySelector("#pagesBox");
 const authorBox = document.querySelector("#authorBox");
 const cancel = document.querySelector("#cancel");
+const readStatus = document.querySelector("#readStatus")
 
 let myLibrary = [{
     title: "bookTitle",
     author:"authorName",
     pages:"69420",
-    read:"readOrNot"
+    read:true
 
 }];
 
@@ -48,8 +49,11 @@ submitForm.addEventListener('click',()=>{
     let name1 = titleBox.value
     let author1 = authorBox.value
     let pages1 = pagesBox.value
+    let read1 = readStatus.checked
+    
+    console.log(read1);
 
-    myLibrary.push(new Book(name1,author1,pages1));
+    myLibrary.push(new Book(name1,author1,pages1,read1));
 
     renderBooks()
 
@@ -64,8 +68,6 @@ function renderBooks(){
         let renderedDiv = document.createElement("div")
         renderedDiv.className = "bookCard"
 
-
-
         let renderedTitle = document.createElement("p")
         renderedTitle.classList.add("title","info")
         renderedTitle.textContent= `${myLibrary[i].title}`
@@ -78,16 +80,28 @@ function renderBooks(){
         renderedPages.classList.add("pages","info")
         renderedPages.textContent = `Pages : ${myLibrary[i].pages}`
 
-        // let renderedRead = document.createElement("p")
-        // renderedRead.classList.add("readStatus","info")
-        // renderedRead.textContent = `Read : ${myLibrary[i].read}`
+        renderedDiv.appendChild(renderedTitle);
+        renderedDiv.appendChild(renderedAuthor);
+        renderedDiv.appendChild(renderedPages);
+
+        console.log(`value of read1 is ${myLibrary[i].read}`);
+
+        if(myLibrary[i].read){
+            let readButton = document.createElement("button")
+            readButton.textContent= `Read`
+            readButton.classList.add("readButton","readStatusButtons")
+
+            renderedDiv.appendChild(readButton)
+        }else{
+            let unreadButton = document.createElement("button")
+            unreadButton.textContent= `unread`
+            unreadButton.classList.add("unreadButton","readStatusButtons")
+
+            renderedDiv.appendChild(unreadButton)
+        }
 
 
 
-        // renderedBook.textContent = `Name: ${myLibrary[i].title}
-        //                             Author:${myLibrary[i].author}
-        //                             Pages:${myLibrary[i].pages}
-        //                             ReadStatus:${myLibrary[i].read}`
 
         renderedDiv.appendChild(renderedTitle);
         renderedDiv.appendChild(renderedAuthor);

@@ -42,9 +42,17 @@ body{
 .allBooks{
     display: flex;
     flex-wrap: wrap;
+
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .bookCard{
+
+    display: flex;
+    flex-direction: column;
+
     border: 2px solid black;
     border-radius: 10px;
     margin: 10px;
@@ -53,6 +61,18 @@ body{
     height: 20rem;
 
     box-shadow: 4px 4px 10px var(--cardInfo);
+
+}
+
+.readStatusButtons{
+    order: 1;
+    margin-top: auto;
+    border-radius: 0px 0px 10px 10px;
+    border: 0px;
+    height: 60px;
+    font-family: 'Inter',Arial, Helvetica, sans-serif;
+    background-color: #a792b4;
+    font-size: 1.3rem;
 }
 
 
@@ -79,8 +99,6 @@ body{
 .inputForm{
     display: flex;
     flex-direction: column;
-
-    
 }
 
 .inputBox{
