@@ -1,15 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kalnia+Glaze:wght@100..700&family=Modern+Antiqua&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root{
     --backgroundColor:#FDE2FF;
     --cardTitle: black;
     --cardBackground:#D7BCE8;
     --cardInfo:rgb(37, 36, 36);
+    --readStatusButtonColor: #a792b4;
 
     --titleSize:3rem;
 
@@ -23,7 +25,15 @@ body{
     height: 100vh;
     background-color: var(--backgroundColor);
 
-    font-family: 'Inter',Arial, Helvetica, sans-serif;
+    /* font-family: 'Inter',Arial, Helvetica, sans-serif; */
+    font-family: 'Modern Antiqua',Arial, Helvetica, sans-serif;
+
+}
+
+.heading{
+    font-family: 'Modern Antiqua',Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    display: flex;
 }
 
 .title{
@@ -35,6 +45,8 @@ body{
     width:8rem;
     height: 2.5rem;
     border-radius: 15px;
+    font-family: 'Modern Antiqua',Arial, Helvetica, sans-serif;
+    
 }
 
 
@@ -71,7 +83,7 @@ body{
     border: 0px;
     height: 60px;
     font-family: 'Inter',Arial, Helvetica, sans-serif;
-    background-color: #a792b4;
+    background-color: var(--readStatusButtonColor);
     font-size: 1.3rem;
 }
 
@@ -87,13 +99,20 @@ body{
     color: var(--cardTitle);
     margin: 6px;
     margin-bottom: 1px;
-    font-size: 3rem;
+    font-size: clamp(2rem,50%,3rem)
+
+    
 }
 
 .inputBox{
     justify-self: center;
     align-self: center;
     border-radius: 10px;
+
+    width: 30%;
+    height: 40%;
+
+    text-align: center;
 }
 
 .inputForm{
@@ -101,10 +120,6 @@ body{
     flex-direction: column;
 }
 
-.inputBox{
-    width: 40%;
-    height: 40%;
-}
 
 .inputBox * {
     margin: 5px;
@@ -115,6 +130,9 @@ body{
 .authorBox,
 .pagesBox{
     border-radius: 10px;
+    text-align: center;
+    font-family: 'Modern Antiqua',Arial, Helvetica, sans-serif;
+
 }
 
 .inputBox::backdrop{
@@ -137,4 +155,10 @@ body{
 
     position: relative;
     top: 2px;
+}
+
+.submitForm,
+.cancel{
+    background-color: #e5dcec;
+    border: 1px solid black;
 }

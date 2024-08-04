@@ -126,5 +126,15 @@ cancel.addEventListener('click',()=>{
     dialog.close()
 })
 
+readButton.addEventListener('click',()=>{
+    if(this.read===true){
+        this.read===false
+    }else if(this.read===false){
+        this.reaad===true
+    }
+
+    renderBooks()
+})
+
 
 
