@@ -34,6 +34,9 @@ body{
     font-family: 'Modern Antiqua',Arial, Helvetica, sans-serif;
     font-size: 3rem;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .title{
@@ -65,6 +68,8 @@ body{
     display: flex;
     flex-direction: column;
 
+    overflow: auto;
+
     border: 2px solid black;
     border-radius: 10px;
     margin: 10px;
@@ -85,6 +90,7 @@ body{
     font-family: 'Inter',Arial, Helvetica, sans-serif;
     background-color: var(--readStatusButtonColor);
     font-size: 1.3rem;
+    width: 100%;
 }
 
 

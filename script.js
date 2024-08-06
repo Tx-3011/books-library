@@ -9,15 +9,11 @@ const authorBox = document.querySelector("#authorBox");
 const cancel = document.querySelector("#cancel");
 const readStatus = document.querySelector("#readStatus")
 
-let myLibrary = [{
-    title: "bookTitle",
-    author:"authorName",
-    pages:"69420",
-    read:true
+let readButtonsArray = []
 
-}];
+let myLibrary = [];
 
-function Book(title,author,pages,read){   //,author,pages,read
+function Book(title,author,pages,read){ 
 
     this.title = title;
     this.author = author;
@@ -26,16 +22,10 @@ function Book(title,author,pages,read){   //,author,pages,read
     
 }
 
-// let HarryPotter = new Book("HarryPotter","JK Rowling",500,true);
 
 
 function addBookToLibrary(){
-    // let name1 = prompt("Enter the book name: ")
-    // let author1 = prompt("Enter the author name: ")
-    // let pages1 = prompt("Enter the number of pages: ")
-    // let read1 = prompt("Did you read the book?")
-
-    // myLibrary.push(new Book(name1,author1,pages1,read1));  
+  
     
     dialog.showModal()
     renderBooks()    
@@ -80,33 +70,40 @@ function renderBooks(){
         renderedPages.classList.add("pages","info")
         renderedPages.textContent = `Pages : ${myLibrary[i].pages}`
 
-        renderedDiv.appendChild(renderedTitle);
-        renderedDiv.appendChild(renderedAuthor);
-        renderedDiv.appendChild(renderedPages);
 
         console.log(`value of read1 is ${myLibrary[i].read}`);
 
-        if(myLibrary[i].read){
-            let readButton = document.createElement("button")
-            readButton.textContent= `Read`
-            readButton.classList.add("readButton","readStatusButtons")
+        let readButton = document.createElement("button")
+        readButton.classList.add("readButton","readStatusButtons")
 
-            renderedDiv.appendChild(readButton)
-        }else{
-            let unreadButton = document.createElement("button")
-            unreadButton.textContent= `unread`
-            unreadButton.classList.add("unreadButton","readStatusButtons")
 
-            renderedDiv.appendChild(unreadButton)
+        function checkStatus(){
+            if(myLibrary[i].read){
+                readButton.textContent = `Read`
+            }else{readButton.textContent = `Unread`}
+
         }
 
+        renderedDiv.appendChild(readButton)
+
+        checkStatus()
+
+
+        readButton.addEventListener('click',()=>{
+            
+            myLibrary[i].read = !myLibrary[i].read;
+
+            console.log("clicked");
+            
+
+            checkStatus()
+        })
 
 
 
         renderedDiv.appendChild(renderedTitle);
         renderedDiv.appendChild(renderedAuthor);
         renderedDiv.appendChild(renderedPages);
-        // renderedDiv.appendChild(renderedRead);
 
         allBooks.appendChild(renderedDiv);
 
@@ -126,15 +123,7 @@ cancel.addEventListener('click',()=>{
     dialog.close()
 })
 
-readButton.addEventListener('click',()=>{
-    if(this.read===true){
-        this.read===false
-    }else if(this.read===false){
-        this.reaad===true
-    }
 
-    renderBooks()
-})
 
 
 
